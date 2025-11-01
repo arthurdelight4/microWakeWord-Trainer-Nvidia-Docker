@@ -5,7 +5,7 @@
 
 # 🥔 MicroWakeWord Trainer for AMD
 
-**✅ Tater Totterson tested & working on an NVIDIA RTX 3070 Laptop GPU (8 GB VRAM).**  
+** ⏱️ Still testing to get it working on an AMD 9070.**  
 Easily train microWakeWord detection models with this pre-built Docker image and JupyterLab notebook.  
 
 ---
