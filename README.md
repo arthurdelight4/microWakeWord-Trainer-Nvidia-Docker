@@ -25,15 +25,22 @@ docker pull ghcr.io/tatertotterson/microwakeword:latest
 ### 2️⃣ Run the Docker Container  
 
 ```bash
-docker run --rm -it \
-    --gpus all \
+sudo docker run -it \
+    --device=/dev/kfd \
+    --device=/dev/dri \
+    --security-opt seccomp=unconfined \
+    --group-add video \
     -p 8888:8888 \
     -v $(pwd):/data \
     ghcr.io/tatertotterson/microwakeword:latest
+
 ```
 
 **What these flags do:**  
-- `--gpus all` → Enables GPU acceleration  
+- `--device=/dev/kfd` → Allow access to the Kernel Fusion Driver
+- `--device=/dev/dri` → Allow access to your GPU
+- `--security-opt seccomp=unconfined` → Give the container access to system calls for memory mapping
+- `--group-add video` → Allow access to the GPU hardware in the container
 - `-p 8888:8888` → Exposes JupyterLab on port 8888  
 - `-v $(pwd):/data` → Saves your work in the current folder  
 
