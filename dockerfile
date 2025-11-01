@@ -1,5 +1,5 @@
 # CUDA 12.6 + cuDNN devel (Ubuntu 22.04)
-FROM nvidia/cuda:12.6.2-cudnn-devel-ubuntu22.04
+FROM rocm/dev-ubuntu-22.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
